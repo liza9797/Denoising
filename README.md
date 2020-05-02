@@ -52,7 +52,7 @@ pip install -r requirements.txt
 To train the model, run:
 
 ```
-python train_model.py --path-to-dataset=PATH-TO-DATA
+python train_model.py --path-to-dataset=PATH-TO-DATA --path-to-results=PATH-TO-RESULTS
 ```
 
 ### Evaluate denoising model
@@ -60,7 +60,7 @@ python train_model.py --path-to-dataset=PATH-TO-DATA
 To evaluate the model, run:
 
 ```
-python evaluate.py --path-to-dataset=PATH-TO-DATA
+python evaluate.py --path-to-dataset=PATH-TO-DATA --path-to-results=PATH-TO-RESULTS
 ```
 
 ### Run Docker File
