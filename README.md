@@ -18,19 +18,26 @@ Data have to have the following structure:
 
 \- data\
 
-\-- train\\
+\- \- train\\
 
-\--- clean\\
+\- \- \- clean\\
 
-\---- ...
+\- \- \- \- ...
 
-\--- noisy \\
-                 ...
-        val\
-            clean\
-                 ...
-            noisy\
-                 ...
+\- \- \- noisy \\
+                 
+\- \- \- \- ...
+        
+\- \- val\\
+
+\- \- \- clean\\
+
+\- \- \- \- ...
+
+\- \- \- noisy \\
+                 
+\- \- \- \- ...
+
 
 ### Set Ups
 
