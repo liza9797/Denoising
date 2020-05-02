@@ -10,8 +10,11 @@ from model import EncoderDecoderModel
 
 
 class DenoisingModel():
+
     def __init__(self, device):
-        
+        r""" Initialization of Denoising Model.
+        """
+
         self.model = EncoderDecoderModel()
         self.model.load_state_dict(torch.load(os.path.join(ROOT_DIR, "weights.pth"), map_location=device))
 
@@ -19,6 +22,24 @@ class DenoisingModel():
         self.model.eval()
     
     def predict(self, data_path, device):
+        r""" Loads the spectrogram from data_path, preprocesses the spectrogram and
+        applies NN model to obtain denoised sample.
+        
+        Inputs:
+            data_path: str
+                Path to the data.
+            
+            device: torch.device
+                Device for calculation.
+        
+        Outputs:
+            signal_pred: numpy.ndarray
+                Predicted spectrogram.
+            
+            mae: float
+                Sum of Absolute Error between input and predicted signal (is needed for classification).
+            
+        """
         
         signal = self.get_file(data_path)
         x = self.preprocessing(signal)
@@ -34,6 +55,8 @@ class DenoisingModel():
             
     @staticmethod
     def get_file(path):
+        r""" Loads .npy file and adds zeros if it is too small to be trated into the network.
+        """
         
         signal = np.load(path)
         
@@ -47,6 +70,8 @@ class DenoisingModel():
     
     @staticmethod
     def preprocessing(x):
+        r""" Transfer array into tensor.
+        """
         
         x = x[None, None].astype(np.float32)
         x = torch.tensor(x)
