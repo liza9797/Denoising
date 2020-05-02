@@ -15,8 +15,9 @@ Data for training and validation have to be loaded from:
 [validation data]:https://drive.google.com/file/d/1c8a9xlgThXiX4_zxAOwXkqcooz_MeSQf/view
 
 Data have to have the following structure: 
-    data\
-        train\
+\- data\
+\-- train\
+\-\- 
             clean\
                  ...
             noisy\
@@ -42,3 +43,12 @@ To train the model, run:
 ```
 python train_model.py --path-to-dataset=PATH-TO-DATA
 ```
+
+### Evaluate denoising model
+
+To evaluate the model, run:
+
+```
+python evaluate.py --path-to-dataset=PATH-TO-DATA
+```
+
