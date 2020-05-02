@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# images
+*.jpeg
+*.jpg
+*.png
+
+# h5 files
+*.hdf5
+*.dat
+# logs:
+*.log
+
+# archives
+*.gz
+*.zip
+*.rar
+
+# csv files
+*.csv
