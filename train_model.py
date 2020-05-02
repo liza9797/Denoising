@@ -44,9 +44,6 @@ def get_args():
 
     parser.add_argument('-e', '--epochs', type=int, default=100, action='store',
                         help='Number of epochs.')
-    
-    
-
 
     return parser.parse_args()
 

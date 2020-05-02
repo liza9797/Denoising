@@ -55,7 +55,7 @@ def evaluation(model, path_to_dataset, path_to_results, device):
         os.makedirs(path_to_results_denoised)
     
     # Create file with results
-    df = pd.DataFrame(columns=["file_name", "denoised_file", "mae"])
+    df = pd.DataFrame(columns=["file_name", "result", "denoised_file"])
     
     # Get all pathes to files of the dataset
     data_paths_list = [] 
@@ -66,10 +66,11 @@ def evaluation(model, path_to_dataset, path_to_results, device):
         
         prediction, mae = model.predict(data_path, device)
         path_to_results_file = os.path.join(path_to_results_denoised, "file{}_denoised.npy".format(i))
+        class_name = "noisy" if mae > 10000 else "clean"
         
         # Save data for denoised file
         np.save(path_to_results_file, prediction)
-        df.loc[df.shape[0]] = [data_path, path_to_results_file, mae]
+        df.loc[df.shape[0]] = [data_path, class_name, path_to_results_file]
         
     # Save results
     path_to_results_df = os.path.join(path_to_results, "results.csv")
