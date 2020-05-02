@@ -16,12 +16,15 @@ Data for training and validation have to be loaded from:
 
 Data have to have the following structure: 
 
-\- data \\
-\-- train \\
-\-\- 
-            clean\
-                 ...
-            noisy\
+\- data\
+
+\-- train\\
+
+\--- clean\\
+
+\---- ...
+
+\--- noisy \\
                  ...
         val\
             clean\
