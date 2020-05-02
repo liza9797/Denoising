@@ -1,11 +1,10 @@
-# import librosa # for mel-spectrogram estimation
-# import soundfile
-
+import argparse
 import numpy as np
 import pandas as pd
 import os
 import sys
 import torch
+
 from tqdm import tqdm
 
 # Path initialization
@@ -13,6 +12,22 @@ ROOT_DIR=os.path.dirname(os.path.abspath(__file__))
 
 sys.path.insert(0, ROOT_DIR)
 from DenoisingModel import DenoisingModel
+
+
+def get_args():
+    parser = argparse.ArgumentParser(description='Train the UNet on images and target masks',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument('-d', '--device', type=str, default="cpu", action='store',
+                        help='Device to use')
+    
+    parser.add_argument('-l', '--path-to-dataset', type=str, default="../data/val/noisy/", action='store',
+                        help='Path to dataset')
+    parser.add_argument('-s', '--path-to-results', type=str, default="results/", action='store',
+                        help='Path to save the results')
+
+
+    return parser.parse_args()
         
         
 def get_data_paths(current_path, data_paths_list):
@@ -63,16 +78,18 @@ def evaluation(model, path_to_dataset, path_to_results, device):
 
 if __name__ == "__main__":
     
-    path_to_dataset = "../data/val/noisy/"
-    path_to_results = "results/"
+    args = get_args()
     
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+#     path_to_dataset = "../data/val/noisy/"
+#     path_to_results = "results/"
+    
+    device = torch.device(args.device)
     model = DenoisingModel(device)
     
     # Eval
     evaluation(model, 
-               path_to_dataset=path_to_dataset, 
-               path_to_results=path_to_results, 
+               path_to_dataset=args.path_to_dataset, 
+               path_to_results=args.path_to_results, 
                device=device)
 
     
