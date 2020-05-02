@@ -68,10 +68,11 @@ python evaluate.py --path-to-dataset=PATH-TO-DATA
 To run Docker File, do the following:
 
 ```
+git clone https://github.com/liza9797/Denoising.git
+cd Denoising/
 docker build -t denoising .
-docker run -v path_to_dataset:PATH-TO-DATA -v path_to_results:PATH-TO-RESULTS-FOLDER image_name=denoising
+docker run -v PATH-TO-DATASET:/dataset -v PATH-TO-RESULTS:/results denoising
 ```
-
-
+where PATH-TO-DATASET is a path to the data and PATH-TO-RESULTS is a path to the folser, where to save data.
 
 
