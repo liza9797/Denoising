@@ -1,5 +1,5 @@
 # Denoising
 
-![](image/noisy.npy)
+![](image/noisy.png)
 
-![](image/clean.npy)
+![](image/clean.png)

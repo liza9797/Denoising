@@ -12,7 +12,6 @@ ipython_config.py
 # images
 *.jpeg
 *.jpg
-*.png
 
 # h5 files
 *.hdf5
