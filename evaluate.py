@@ -21,9 +21,9 @@ def get_args():
     parser.add_argument('-d', '--device', type=str, default="cpu", action='store',
                         help='Device to use')
     
-    parser.add_argument('-l', '--path-to-dataset', type=str, default="../data/val/noisy/", action='store',
+    parser.add_argument('-l', '--path-to-dataset', type=str, default="/dataset", action='store',
                         help='Path to dataset')
-    parser.add_argument('-s', '--path-to-results', type=str, default="results/", action='store',
+    parser.add_argument('-s', '--path-to-results', type=str, default="/results", action='store',
                         help='Path to save the results')
 
 
