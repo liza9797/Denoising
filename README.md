@@ -63,3 +63,15 @@ To evaluate the model, run:
 python evaluate.py --path-to-dataset=PATH-TO-DATA
 ```
 
+### Run Docker File
+
+To run Docker File, do the following:
+
+```
+docker build -t denoising .
+docker run -v path_to_dataset:PATH-TO-DATA -v path_to_results:PATH-TO-RESULTS-FOLDER image_name=denoising
+```
+
+
+
+
