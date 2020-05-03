@@ -45,7 +45,7 @@ def get_data_paths(current_path, data_paths_list):
     
     
 def evaluation(model, path_to_dataset, path_to_results, device):
-    r""" Evaluate model on the data from path_to_datase directory,
+    r""" Evaluates model on the data from path_to_datase directory,
     save results to path_to_results directory.
     """
     

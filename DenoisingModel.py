@@ -56,7 +56,7 @@ class DenoisingModel():
             
     @staticmethod
     def get_file(path):
-        r""" Loads .npy file and adds zeros if it is too small to be trated into the network.
+        r""" Loads .npy file and adds zeros if it is too small to be fed into the network.
         """
         
         signal = np.load(path)

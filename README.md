@@ -10,9 +10,9 @@ The DL model for spectrogram denoising. Here are examples of noisy and denoised 
 
 Data for training and validation have to be loaded from: 
 
-[train data]:https://drive.google.com/file/d/1jVeoX3yNGL3IqycQKwLb8Hs2N49Advuu/view
+[train data](https://drive.google.com/file/d/1jVeoX3yNGL3IqycQKwLb8Hs2N49Advuu/view)
 
-[validation data]:https://drive.google.com/file/d/1c8a9xlgThXiX4_zxAOwXkqcooz_MeSQf/view
+[validation data](https://drive.google.com/file/d/1c8a9xlgThXiX4_zxAOwXkqcooz_MeSQf/view)
 
 Data have to have the following structure: 
 
@@ -73,6 +73,6 @@ cd Denoising/
 docker build -t denoising .
 docker run -v PATH-TO-DATASET:/dataset -v PATH-TO-RESULTS:/results denoising
 ```
-where PATH-TO-DATASET is a path to the data and PATH-TO-RESULTS is a path to the folser, where to save data.
+where PATH-TO-DATASET is a path to the data and PATH-TO-RESULTS is a path to the folder, where to save results.
 
 

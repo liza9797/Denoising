@@ -21,7 +21,7 @@ class AudioDATA(Dataset):
         return len(self.data_paths_clean)
     
     def expand_to_fixed_size(self, x):
-        r""" Cats the input spectrogram to the fixed size. 
+        r""" Processes input spectrogram to the fixed size. 
         """
         
         if x.shape[0] > self.fixed_size:
@@ -49,7 +49,7 @@ class AudioDATA(Dataset):
     
     @staticmethod
     def get_data_paths(dir_path):
-        r""" Get all data paths to .npy files in the directory.
+        r""" Gets all pathes of .npy files from the directory.
         """
         
         data_paths_list = []
